@@ -5,13 +5,13 @@ Captura_Numero = []
 
 
 def Validar_Numero(numero):
-    #print('estos son los numeros ',numero)
+    captura = []
     for i in numero:
-        print(numero.isnumeric())
-       # if i.isnumeric()==True:
-     #       print('el numero del vector ')
-    #    else:
-    #        print('EL VECTOR TIENE UNA LETRA')
+        if i.isdigit()==True:
+            captura.append(i)
+        else:
+            continue
+    Captura_Numero.append(captura)
 
 
 def Crear():
@@ -28,16 +28,12 @@ def Escribir():
     except FileNotFoundError:
         print ("NO EXISTE EL ARCHIVO")
 
-
-
 def Leer():
     try:    
         archivo = open("inicial.txt")
         linea = archivo.readline()
         while(linea):
             Validar_Numero(linea)
-            #Captura_Numero.append(linea)
-            #print('este son los numeros',linea)
             linea = archivo.readline()
         archivo.close()
     except FileNotFoundError:
@@ -56,5 +52,6 @@ def Leer():
 Leer()
 #input()
 
+print('ESTE ES LA MATRIX',Captura_Numero)
 
 
