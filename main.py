@@ -1,9 +1,5 @@
 from collections import deque
 
-
-Captura_Numero = []
-
-''''''
 #Clase que define un nodo en el 8-puzzle.
 class Nodo:
     def __init__(self, estado, padre, movimiento, profundidad, piezas_correctas):        
@@ -237,51 +233,10 @@ def main():
 
     return 0    
 
-''''''
-
-def Validar_Numero(numero):
-    captura = []
-    for i in numero:
-        if i.isdigit()==True:
-            captura.append(i)
-        else:
-            continue
-    Captura_Numero.append(captura)
 
 
-def Crear():
-    archivo = open("inicial.txt","w")
-    archivo.close()
-
-def Escribir():
-    try:
-        archivo = open("inicial.txt")
-        print("escribe un texto")
-        cadena = input()
-        archivo.write(cadena+'\n')
-        archivo.close()
-    except FileNotFoundError:
-        print ("NO EXISTE EL ARCHIVO")
-
-def Leer():
-    try:    
-        archivo = open("inicial.txt")
-        linea = archivo.readline()
-        while(linea):
-            Validar_Numero(linea)
-            linea = archivo.readline()
-        archivo.close()
-    except FileNotFoundError:
-        print ("NO EXISTE EL ARCHIVO")
 
 
 
 if __name__ == "__main__":
-
-    Leer()
-    print('este son los numeros capturados : ',Captura_Numero)
-    #input()
-
-
-
-
+    main()
