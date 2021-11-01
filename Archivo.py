@@ -8,9 +8,10 @@ captura_final = []
 
 
 def Validar_Numero(numero):
+   
     completo = ''
     for i in numero:
-        if i==',':
+        if i==',' or i==';':
             captura_inicial.append(completo)
             completo=''
         else:
@@ -20,7 +21,7 @@ def Validar_Numero(numero):
 def Validar_Numero_Final(numero):
     completo = ''
     for i in numero:
-        if i==',':
+        if i==',' or i==';':
             captura_final.append(completo)
             completo=''
         else:
