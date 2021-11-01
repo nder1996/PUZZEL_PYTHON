@@ -1,16 +1,30 @@
 from collections import deque
 
 
-Captura_Numero = []
+captura_inicial = []
+
+captura_final = []
+
+
 
 def Validar_Numero(numero):
-    Captura_Numero.append(numero)
-    #for i in numero:
-    #    if i.isdigit()==True:
-    #        captura.append(i)
-    #    else:
-    #        continue
-    #Captura_Numero.append(captura)
+    completo = ''
+    for i in numero:
+        if i==',':
+            captura_inicial.append(completo)
+            completo=''
+        else:
+            completo +=i
+
+
+def Validar_Numero_Final(numero):
+    completo = ''
+    for i in numero:
+        if i==',':
+            captura_final.append(completo)
+            completo=''
+        else:
+            completo +=i
 
 
 def Crear():
@@ -35,19 +49,27 @@ def Leer():
             Validar_Numero(linea)
             linea = archivo.readline()
         archivo.close()
-        Captura_Numero.pop();
+        #captura_inicial.pop();
+    except FileNotFoundError:
+        print ("NO EXISTE EL ARCHIVO")
+
+def Leer_1():
+    try:    
+        archivo = open("final.txt")
+        linea = archivo.readline()
+        while(linea):
+            Validar_Numero_Final(linea)
+            linea = archivo.readline()
+        archivo.close()
     except FileNotFoundError:
         print ("NO EXISTE EL ARCHIVO")
 
 
-
 if __name__ == "__main__":
-
     Leer()
-    #print(Captura_Numero)
-    #for i in Captura_Numero:
-       # print('este son los numeros capturados : ',i)
-    #input()
+    Leer_1()
+ 
+
 
 
 

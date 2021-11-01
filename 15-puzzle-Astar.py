@@ -262,16 +262,26 @@ def distance(mat):
 
 	
 if __name__ == '__main__':
+    inicial = []
     Leer()
-    print('este es el tama;o del vector ',len(Captura_Numero) )
-    for i in Captura_Numero:
-        print('estos son los datos : ',i)
-    print  ("input the numbers from 0-15. ")                                                  
-    print ("Note : press space-bar after entering each number to enter next one  ")
-    numbers = [int(x) for x in input().split()]                                               
+    Leer_1()
+    for i in captura_inicial:
+        print(i,'\n')
+        #if i.isdigit() == True:
+            #print('este es el numero : ',i,'\n')
+    #print  ("input the numbers from 0-15. ")                                                  
+    #print ("Note : press space-bar after entering each number to enter next one  ")
+    #print('valor inicial : ',captura_inicial)
+    #for i in captura_inicial:
+    #    print('este es el numero de i : ', i)
+        #for j in i:
+        #if i.isdigit()==True:
+            #numbers = captura_inicial.copy()
+            #print('este es el numero : ',j,'\n')    
+    #numbers = [int(x) for x in input().split()]
+    '''                                               
     puzzle = str([numbers[i:i+rows] for i in range(0, len(numbers), rows)])
-    goal = str([[0, 1, 2, 3],[4, 5, 6, 7],[8, 9, 10, 11],[12, 13, 14, 15]])
-    
+    goal = str([[0, 1, 2, 3],[4, 5, 6, 7],[8, 9, 10, 11],[12, 13, 14, 15]])    
     root=tree.root=None
     if isSolvable(puzzle) : 
         print ("solvable")	
@@ -279,7 +289,8 @@ if __name__ == '__main__':
         tree.traversePreorder(root)
         print(char(x) for x in input())
         A_star(puzzle,goal,root)
-        #tree.traversePreorder(root)
     else:
         print("not solvable") 
+    '''
+
         
